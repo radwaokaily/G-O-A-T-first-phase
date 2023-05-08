@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.container-spinner {
+    width: 100%;
+    height: 1200px;
+    /* background-color: black;  */
+    background-image: linear-gradient(red, orange);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    margin: 100px auto;
+    -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+    animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+    0% {
+        -webkit-transform: perspective(120px)
+    }
+
+    50% {
+        -webkit-transform: perspective(120px) rotateY(180deg)
+    }
+
+    100% {
+        -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg)
+    }
+}
+
+@keyframes sk-rotateplane {
+    0% {
+        transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+    }
+
+    50% {
+        transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+        -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+    }
+
+    100% {
+        transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+}
+
+nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    border-bottom: 2px solid #000;
+}
+
+nav .container {
+    width: 100%;
+    margin: auto;
+    background-color: white;
+}
+
+nav .container .row {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    /* padding: 10px 0; */
+}
+
+nav .container .logo {
+    flex: 60%;
+    max-width: 60%;
+}
+
+nav .container .logo img {
+    width: 8%;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    margin-left: 80px;
+}
+
+nav .container .links {
+    flex: 40%;
+    max-width: 40%;
+
+}
+
+nav .container .links ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav .container .links ul a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    padding: 15px;
+}
+
+/* section{
+    background-color: rgb(244, 8, 8);
+    width: 100%;
+    height: 500px;
+    margin-top: 50px;
+    margin: auto;
+} */
+
+/* .gallery-t-shirt{
+    width: 100%;
+    height: 500px;
+    margin-top: 50px;
+    
+}
+.gallery-t-shirt img{
+    width:20%
+
+} */
+.gallery-t-shirt {
+    width: 80%;
+    height: 600px;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+
+    width: 30%;
+    height: 100%;
+    margin-left: 2.5%;
+    display: inline-block;
+}
+
+.item--img {
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+    position: relative;
+}
+
+.item--img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 30%;
+    transition: all 2s;
+    opacity: 0.5;
+
+}
+
+.item--img:hover img {
+    scale: 1.5 1.5;
+    opacity: 1;
+}
+
+.circle {
+    background-color: blueviolet;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    left: -300px;
+    bottom: -300px;
+    position: absolute;
+    transition: all 1s;
+    opacity: 0;
+}
+
+.circle h1 {
+    position: absolute;
+    z-index: 555;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.item--img:hover .circle {
+    left: -30px;
+    bottom: -30px;
+    opacity: 0.6;
+
+}
+
+
+.content {
+    text-align: center;
+}
+
+
+
+.column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+}
+
+.about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+}
+
+.container {
+    padding: 0 16px;
+    text-align: center;
+}
+
+.container::after,
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: grey;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
